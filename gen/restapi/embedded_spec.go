@@ -97,12 +97,24 @@ func init() {
           "type": "string",
           "minLength": 1
         },
+        "bathrooms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bedrooms": {
+          "type": "integer",
+          "format": "int64"
+        },
         "id": {
           "type": "integer",
           "format": "int64",
           "readOnly": true
         },
-        "turnKey": {
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn_key": {
           "type": "boolean"
         }
       }
@@ -189,12 +201,24 @@ func init() {
           "type": "string",
           "minLength": 1
         },
+        "bathrooms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bedrooms": {
+          "type": "integer",
+          "format": "int64"
+        },
         "id": {
           "type": "integer",
           "format": "int64",
           "readOnly": true
         },
-        "turnKey": {
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn_key": {
           "type": "boolean"
         }
       }

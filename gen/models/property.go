@@ -22,12 +22,22 @@ type Property struct {
 	// Min Length: 1
 	Address *string `json:"address"`
 
+	// bathrooms
+	Bathrooms int64 `json:"bathrooms,omitempty"`
+
+	// bedrooms
+	Bedrooms int64 `json:"bedrooms,omitempty"`
+
 	// id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// note
+	// Min Length: 1
+	Note string `json:"note,omitempty"`
+
 	// turn key
-	TurnKey bool `json:"turnKey,omitempty"`
+	TurnKey bool `json:"turn_key,omitempty"`
 }
 
 // Validate validates this property
@@ -35,6 +45,10 @@ func (m *Property) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAddress(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateNote(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -51,6 +65,19 @@ func (m *Property) validateAddress(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinLength("address", "body", string(*m.Address), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateNote(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Note) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("note", "body", string(m.Note), 1); err != nil {
 		return err
 	}
 

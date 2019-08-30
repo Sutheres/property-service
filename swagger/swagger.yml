@@ -46,8 +46,17 @@ definitions:
       address:
         type: string
         minLength: 1
-      turnKey:
+      turn_key:
         type: boolean
+      note:
+        type: string
+        minLength: 1
+      bedrooms:
+        type: integer
+        format: int64
+      bathrooms:
+        type: integer
+        format: int64
   error:
     type: object
     required:
