@@ -35,6 +35,21 @@ paths:
             $ref: "#/definitions/error"
         500:
           description: server error
+  /properties/{id}:
+    get:
+      summary: Gets a property by id.
+      parameters:
+        - name: id
+          in: path
+          description: property ID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/property'
 definitions:
   property:
     type: object

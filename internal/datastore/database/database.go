@@ -13,6 +13,7 @@ type database struct {
 }
 type Database interface{
 	GetProperties() ([]models.Property, error)
+	GetProperty(propertyID int64) (models.Property, error)
 }
 
 func NewDatastore(dbUrl string) (Database, error) {

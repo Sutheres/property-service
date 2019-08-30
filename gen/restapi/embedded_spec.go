@@ -72,6 +72,29 @@ func init() {
           }
         }
       }
+    },
+    "/properties/{id}": {
+      "get": {
+        "summary": "Gets a property by id.",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "description": "property ID",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/property"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -175,6 +198,29 @@ func init() {
             "description": "generic error response",
             "schema": {
               "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/properties/{id}": {
+      "get": {
+        "summary": "Gets a property by id.",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "description": "property ID",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/property"
             }
           }
         }

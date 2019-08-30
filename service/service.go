@@ -18,6 +18,7 @@ type Service interface {
 	GetCommitHash() string
 	//
 	GetProperties() ([]models.Property, error)
+	GetProperty(propertyID int64) (models.Property, error)
 }
 type option func(s *service)
 

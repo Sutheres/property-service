@@ -40,6 +40,9 @@ func NewPropertyAPI(spec *loads.Document) *PropertyAPI {
 		GetPropertiesHandler: GetPropertiesHandlerFunc(func(params GetPropertiesParams) middleware.Responder {
 			return middleware.NotImplemented("operation GetProperties has not yet been implemented")
 		}),
+		GetPropertiesIDHandler: GetPropertiesIDHandlerFunc(func(params GetPropertiesIDParams) middleware.Responder {
+			return middleware.NotImplemented("operation GetPropertiesID has not yet been implemented")
+		}),
 	}
 }
 
@@ -73,6 +76,8 @@ type PropertyAPI struct {
 
 	// GetPropertiesHandler sets the operation handler for the get properties operation
 	GetPropertiesHandler GetPropertiesHandler
+	// GetPropertiesIDHandler sets the operation handler for the get properties ID operation
+	GetPropertiesIDHandler GetPropertiesIDHandler
 
 	// ServeError is called when an error is received, there is a default handler
 	// but you can set your own with this
@@ -138,6 +143,10 @@ func (o *PropertyAPI) Validate() error {
 
 	if o.GetPropertiesHandler == nil {
 		unregistered = append(unregistered, "GetPropertiesHandler")
+	}
+
+	if o.GetPropertiesIDHandler == nil {
+		unregistered = append(unregistered, "GetPropertiesIDHandler")
 	}
 
 	if len(unregistered) > 0 {
@@ -242,6 +251,11 @@ func (o *PropertyAPI) initHandlerCache() {
 		o.handlers["GET"] = make(map[string]http.Handler)
 	}
 	o.handlers["GET"]["/properties"] = NewGetProperties(o.context, o.GetPropertiesHandler)
+
+	if o.handlers["GET"] == nil {
+		o.handlers["GET"] = make(map[string]http.Handler)
+	}
+	o.handlers["GET"]["/properties/{id}"] = NewGetPropertiesID(o.context, o.GetPropertiesIDHandler)
 
 }
 

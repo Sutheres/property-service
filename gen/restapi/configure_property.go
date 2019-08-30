@@ -38,6 +38,11 @@ func configureAPI(api *operations.PropertyAPI) http.Handler {
 			return middleware.NotImplemented("operation .GetProperties has not yet been implemented")
 		})
 	}
+	if api.GetPropertiesIDHandler == nil {
+		api.GetPropertiesIDHandler = operations.GetPropertiesIDHandlerFunc(func(params operations.GetPropertiesIDParams) middleware.Responder {
+			return middleware.NotImplemented("operation .GetPropertiesID has not yet been implemented")
+		})
+	}
 
 	api.ServerShutdown = func() {}
 

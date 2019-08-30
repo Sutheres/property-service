@@ -1,14 +1,13 @@
 package database
 
 import (
-	m "github.com/property/internal/models"
+	"github.com/property/internal/models"
 )
 
-func (d database) GetProperties() ([]m.Property, error) {
-
-	var properties []m.Property
+func (d database) GetProperties() ([]models.Property, error) {
+	var properties []models.Property
 	err := d.q.Select(&properties, "SELECT * FROM property")
-	var p []m.Property
+	var p []models.Property
 	for _, props := range properties {
 		p2 := props
 		p = append(p, p2)
