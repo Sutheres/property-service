@@ -4,13 +4,16 @@ import (
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 	"github.com/pkg/errors"
+	"github.com/property/internal/models"
 )
 
 type database struct {
 	q   *sqlx.DB
 	url string
 }
-type Database interface{}
+type Database interface{
+	GetProperties() ([]models.Property, error)
+}
 
 func NewDatastore(dbUrl string) (Database, error) {
 	db, err := sqlx.Connect(

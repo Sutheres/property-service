@@ -61,6 +61,9 @@ func init() {
               }
             }
           },
+          "500": {
+            "description": "server error"
+          },
           "default": {
             "description": "generic error response",
             "schema": {
@@ -164,6 +167,9 @@ func init() {
                 "$ref": "#/definitions/property"
               }
             }
+          },
+          "500": {
+            "description": "server error"
           },
           "default": {
             "description": "generic error response",

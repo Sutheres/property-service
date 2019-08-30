@@ -33,6 +33,8 @@ paths:
           description: generic error response
           schema:
             $ref: "#/definitions/error"
+        500:
+          description: server error
 definitions:
   property:
     type: object

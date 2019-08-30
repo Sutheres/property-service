@@ -4,6 +4,7 @@ import (
 	"github.com/go-openapi/loads"
 	"github.com/property/gen/restapi"
 	"github.com/property/gen/restapi/operations"
+	"github.com/property/internal/datastore/database"
 	"github.com/property/service"
 	"github.com/spf13/cobra"
 	"log"
@@ -27,8 +28,14 @@ func startServer(cmd *cobra.Command, args []string) {
 		log.Panicln("Unable to analyze swaggerSpec", err)
 	}
 
+	db, err := database.NewDatastore("host=localhost port=5432 user=postgres dbname=property password='I am Thunder09!' sslmode=disable")
+	if err != nil {
+		log.Panicln("database.NewDatastore", err)
+	}
+
 	svc := service.NewService(
 		BuildDate, CommitHash,
+		service.WithDatabase(db),
 		)
 
 	service.Configure(api, svc)

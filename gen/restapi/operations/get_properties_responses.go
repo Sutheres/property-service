@@ -60,6 +60,30 @@ func (o *GetPropertiesOK) WriteResponse(rw http.ResponseWriter, producer runtime
 	}
 }
 
+// GetPropertiesInternalServerErrorCode is the HTTP code returned for type GetPropertiesInternalServerError
+const GetPropertiesInternalServerErrorCode int = 500
+
+/*GetPropertiesInternalServerError server error
+
+swagger:response getPropertiesInternalServerError
+*/
+type GetPropertiesInternalServerError struct {
+}
+
+// NewGetPropertiesInternalServerError creates GetPropertiesInternalServerError with default headers values
+func NewGetPropertiesInternalServerError() *GetPropertiesInternalServerError {
+
+	return &GetPropertiesInternalServerError{}
+}
+
+// WriteResponse to the client
+func (o *GetPropertiesInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+
+	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
+
+	rw.WriteHeader(500)
+}
+
 /*GetPropertiesDefault generic error response
 
 swagger:response getPropertiesDefault
