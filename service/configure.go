@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/jmoiron/sqlx"
 	"github.com/property/gen/models"
@@ -22,12 +21,8 @@ func Configure(api *operations.PropertyAPI, service Service) {
 			if err != nil {
 				log.Panicln("Connect", err)
 			}
-			home := m.Property{}
-			err = db.Get(&home, "SELECT * FROM property WHERE id=$1", 1)
-			if err != nil {
-				log.Panicln("Get", err)
-			}
-			fmt.Printf("%#v\n", home)
+			properties := []m.Property{}
+			db.Select(&properties, "SELECT * FROM property")
 
 
 			/*address := "1000 S Grand Ave, Los Angeles, CA 90015"
@@ -37,10 +32,12 @@ func Configure(api *operations.PropertyAPI, service Service) {
 				TurnKey:  true,
 			}*/
 
-			h := home.ToProperty()
-			return operations.NewGetPropertiesOK().WithPayload([]*models.Property{
-				&h,
-			})
+			var p []*models.Property
+			for _, props := range properties {
+				p2 := props.ToProperty()
+				p = append(p, &p2)
+			}
+			return operations.NewGetPropertiesOK().WithPayload(p)
 		})
 
 }

@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453a1be-b677-4f68-8123-5f388c8a45d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/models/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/models/property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/property.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/configure.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/configure.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/swagger.yml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/swagger.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +124,7 @@
       <workItem from="1566612415275" duration="646000" />
       <workItem from="1566833989337" duration="599000" />
       <workItem from="1566860574948" duration="599000" />
-      <workItem from="1567042518052" duration="10392000" />
+      <workItem from="1567042518052" duration="11550000" />
     </task>
     <servers />
   </component>
