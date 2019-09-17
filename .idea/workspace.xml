@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453a1be-b677-4f68-8123-5f388c8a45d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/datastore/database/add_property.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/add_property.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/get_properties.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/get_properties.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/get_property.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/get_property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/migrate.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/migrate.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,6 +130,7 @@
       <workItem from="1567218123104" duration="7176000" />
       <workItem from="1567467010523" duration="637000" />
       <workItem from="1567540268354" duration="162000" />
+      <workItem from="1568683332409" duration="1670000" />
     </task>
     <servers />
   </component>
