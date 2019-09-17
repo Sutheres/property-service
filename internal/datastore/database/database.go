@@ -8,23 +8,25 @@ import (
 )
 
 type database struct {
-	q   *sqlx.DB
+	db   *sqlx.DB
 	url string
 }
 type Database interface{
 	GetProperties() ([]models.Property, error)
 	GetProperty(propertyID int64) (models.Property, error)
+	AddProperty(property models.Property) error
 }
 
 func NewDatastore(dbUrl string) (Database, error) {
 	db, err := sqlx.Connect(
 		"postgres", dbUrl,
 	)
+
 	if err != nil {
 		return nil, errors.Wrap(err, "Connect")
 	}
 	return &database{
-		q:   db,
+		db:   db,
 		url: dbUrl,
 	}, nil
 }

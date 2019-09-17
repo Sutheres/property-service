@@ -19,6 +19,7 @@ type Service interface {
 	//
 	GetProperties() ([]models.Property, error)
 	GetProperty(propertyID int64) (models.Property, error)
+	AddProperty(property models.Property) error
 }
 type option func(s *service)
 

@@ -6,7 +6,7 @@ import (
 
 func (d database) GetProperties() ([]models.Property, error) {
 	var properties []models.Property
-	err := d.q.Select(&properties, "SELECT * FROM property")
+	err := d.db.Select(&properties, "SELECT * FROM property")
 	var p []models.Property
 	for _, props := range properties {
 		p2 := props

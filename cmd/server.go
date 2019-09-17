@@ -28,7 +28,7 @@ func startServer(cmd *cobra.Command, args []string) {
 		log.Panicln("Unable to analyze swaggerSpec", err)
 	}
 
-	db, err := database.NewDatastore("host=localhost port=5432 user=postgres dbname=property password='password' sslmode=disable")
+	db, err := database.NewDatastore("host=localhost port=5432 user=postgres dbname=property password='I am Thunder09!' sslmode=disable")
 	if err != nil {
 		log.Panicln("database.NewDatastore", err)
 	}
