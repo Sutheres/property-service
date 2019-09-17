@@ -1,6 +1,6 @@
 package models
 
-import "github.com/property/gen/models"
+import "github.com/Sutheres/property-service/gen/models"
 
 type Property struct {
 	ID        int64 `db:"id"`

@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/Sutheres/property-service/db"
 	"github.com/pkg/errors"
-	"github.com/solo-service/db"
 	"github.com/spf13/cobra"
 	"log"
 )
@@ -19,7 +19,7 @@ var migrateCmd = &cobra.Command{
 }
 
 func runMigrations(cmd *cobra.Command, args []string) {
-	migrator, err := db.NewDB()
+	migrator, err := db.NewDb()
 	if err != nil {
 		log.Panicln(errors.Wrap(err, "NewDB"))
 	}

@@ -10,7 +10,7 @@ import (
 	runtime "github.com/go-openapi/runtime"
 	middleware "github.com/go-openapi/runtime/middleware"
 
-	"github.com/property/gen/restapi/operations"
+	"github.com/Sutheres/property-service/gen/restapi/operations"
 )
 
 //go:generate swagger generate server --target ../../gen --name Property --spec ../../swagger/swagger.yml --exclude-main

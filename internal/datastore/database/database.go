@@ -1,10 +1,11 @@
 package database
 
 import (
+	"github.com/Sutheres/property-service/internal/models"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 	"github.com/pkg/errors"
-	"github.com/property/internal/models"
+
 )
 
 type database struct {

@@ -1,6 +1,6 @@
 package database
 
-import "github.com/property/internal/models"
+import "github.com/Sutheres/property-service/internal/models"
 
 func (d database) GetProperty(propertyID int64) (models.Property, error)  {
 	p := models.Property{}

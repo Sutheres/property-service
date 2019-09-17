@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/property/cmd"
+	"github.com/Sutheres/property-service/cmd"
 )
 
 func main()  {

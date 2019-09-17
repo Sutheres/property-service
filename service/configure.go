@@ -1,10 +1,10 @@
 package service
 
 import (
+	"github.com/Sutheres/property-service/gen/models"
+	"github.com/Sutheres/property-service/gen/restapi/operations"
 	"github.com/go-openapi/runtime/middleware"
 	_ "github.com/lib/pq"
-	"github.com/property/gen/models"
-	"github.com/property/gen/restapi/operations"
 )
 
 func Configure(api *operations.PropertyAPI, service Service) {

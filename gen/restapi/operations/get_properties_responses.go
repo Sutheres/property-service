@@ -10,7 +10,7 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	models "github.com/property/gen/models"
+	models "github.com/Sutheres/property-service/gen/models"
 )
 
 // GetPropertiesOKCode is the HTTP code returned for type GetPropertiesOK

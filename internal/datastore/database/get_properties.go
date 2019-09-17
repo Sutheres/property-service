@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/property/internal/models"
+	"github.com/Sutheres/property-service/internal/models"
 )
 
 func (d database) GetProperties() ([]models.Property, error) {

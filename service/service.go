@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/property/internal/datastore/database"
-	"github.com/property/internal/models"
+	"github.com/Sutheres/property-service/internal/models"
+	"github.com/Sutheres/property-service/internal/datastore/database"
 )
 
 type service struct {

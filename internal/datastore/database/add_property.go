@@ -1,6 +1,6 @@
 package database
 
-import "github.com/property/internal/models"
+import "github.com/Sutheres/property-service/internal/models"
 
 func (d database) AddProperty(property models.Property) error {
 

@@ -1,6 +1,6 @@
 package service
 
-import "github.com/property/internal/models"
+import "github.com/Sutheres/property-service/internal/models"
 
 func (s service) AddProperty(property models.Property) error {
 
