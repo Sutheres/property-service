@@ -4,6 +4,7 @@ import (
 	"github.com/amacneil/dbmate/pkg/dbmate"
 	"github.com/pkg/errors"
 	"net/url"
+	"os"
 )
 
 type db struct {
@@ -11,7 +12,7 @@ type db struct {
 }
 
 func NewDb() (*db, error) {
-	dbURL, err := url.Parse("db_url")
+	dbURL, err := url.Parse(os.Getenv("DATABASE_URL"))
 
 	if err != nil {
 		return nil, errors.Wrap(err, "url.Parse")

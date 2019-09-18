@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="property-dev" uuid="98ec6936-2afc-4a11-981b-735f8ecf5d57">
+    <data-source source="LOCAL" name="property-dev" uuid="572f3b52-b6ec-4782-8947-b7d4d707d61d">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/property</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/property</jdbc-url>
     </data-source>
   </component>
 </project>

@@ -8,6 +8,7 @@ import (
 	"github.com/go-openapi/loads"
 	"github.com/spf13/cobra"
 	"log"
+	"os"
 )
 
 func init() {
@@ -28,7 +29,7 @@ func startServer(cmd *cobra.Command, args []string) {
 		log.Panicln("Unable to analyze swaggerSpec", err)
 	}
 
-	db, err := database.NewDatastore("host=localhost port=5432 user=property dbname=property password='Property123' sslmode=disable")
+	db, err := database.NewDatastore(os.Getenv("DATABASE_URL"))
 	if err != nil {
 		log.Panicln("database.NewDatastore", err)
 	}
