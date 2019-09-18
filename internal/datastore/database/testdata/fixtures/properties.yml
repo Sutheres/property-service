@@ -1,24 +1,26 @@
 - id: 1
+  property_id: property_id
   street_number: 2933
   street: Montana
   street_suffix: Ave
   city: Cincinnati
   state: Ohio
-  zip_code: 45211
+  zip: 45211
   bedrooms: 4.5
   bathrooms: 2.5
   price: 40,000
-  real_estate_type: residential
-  property_type: multi-family
+  real_estate_type: Residential
+  property_type: Multi-family
 - id: 2
+  property_id: property_id2
   street_number: 285
   street: Dorchester
   street_suffix: Ave
   city: Cincinnati
   state: Ohio
-  zip_code: 45219
+  zip: 45219
   bedrooms: 2
   bathrooms: 1
   price: 35,000
-  real_estate_type: residential
-  property_type: single-family
+  real_estate_type: Commercial
+  property_type: Single-family

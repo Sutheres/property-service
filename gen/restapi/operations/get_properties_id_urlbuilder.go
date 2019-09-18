@@ -10,13 +10,11 @@ import (
 	"net/url"
 	golangswaggerpaths "path"
 	"strings"
-
-	"github.com/go-openapi/swag"
 )
 
 // GetPropertiesIDURL generates an URL for the get properties ID operation
 type GetPropertiesIDURL struct {
-	ID int64
+	ID string
 
 	_basePath string
 	// avoid unkeyed usage
@@ -44,7 +42,7 @@ func (o *GetPropertiesIDURL) Build() (*url.URL, error) {
 
 	var _path = "/properties/{id}"
 
-	id := swag.FormatInt64(o.ID)
+	id := o.ID
 	if id != "" {
 		_path = strings.Replace(_path, "{id}", id, -1)
 	} else {

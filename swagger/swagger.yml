@@ -1,15 +1,23 @@
-swagger: "2.0"
 info:
-  description: A PoC for future use
   title: A Property management application
   version: 1.0.0
-consumes:
-  - application/json
-produces:
-  - application/json
-schemes:
-  - http
+  description: A PoC for future use
 paths:
+  '/properties/{id}':
+    get:
+      summary: Gets a property by id.
+      parameters:
+        - name: id
+          in: path
+          description: property ID
+          required: true
+          type: string
+          minLength: 1
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/property'
   /properties:
     get:
       parameters:
@@ -23,57 +31,58 @@ paths:
           format: int32
           default: 20
       responses:
-        200:
+        '200':
           description: list the property addresses
           schema:
             type: array
             items:
-              $ref: "#/definitions/property"
+              $ref: '#/definitions/property'
+        '500':
+          description: server error
         default:
           description: generic error response
           schema:
-            $ref: "#/definitions/error"
-        500:
-          description: server error
-  /properties/{id}:
-    get:
-      summary: Gets a property by id.
-      parameters:
-        - name: id
-          in: path
-          description: property ID
-          required: true
-          type: integer
-          format: int64
-      responses:
-        200:
-          description: Successful operation
-          schema:
-            $ref: '#/definitions/property'
+            $ref: '#/definitions/error'
 definitions:
   property:
     type: object
-    required:
-      - address
     properties:
-      id:
-        type: integer
-        format: int64
-        readOnly: true
-      address:
+      property_id:
         type: string
         minLength: 1
-      turn_key:
-        type: boolean
-      note:
+      street_number:
+        type: string
+        minLength: 1
+      street:
+        type: string
+        minLength: 1
+      street_suffix:
+        type: string
+        minLength: 1
+      city:
+        type: string
+        minLength: 1
+      state:
+        type: string
+        minLength: 1
+      zip:
         type: string
         minLength: 1
       bedrooms:
-        type: integer
-        format: int64
+        type: number
+        format: float
       bathrooms:
-        type: integer
-        format: int64
+        type: number
+        format: float
+      price:
+        type: string
+        minLength: 1
+      real_estate_type:
+        type: string
+        minLength: 1
+      property_type:
+        type: string
+        minLength: 1
   error:
     type: object
     required:
@@ -84,3 +93,10 @@ definitions:
         format: int64
       message:
         type: string
+schemes:
+  - http
+produces:
+  - application/json
+consumes:
+  - application/json
+swagger: '2.0'

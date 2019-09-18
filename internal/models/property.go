@@ -1,23 +1,41 @@
 package models
 
-import "github.com/Sutheres/property-service/gen/models"
+import (
+	"github.com/Sutheres/property-service/gen/models"
+	"time"
+)
 
 type Property struct {
-	ID        int64 `db:"id"`
-	Address   string `db:"address"`
-	TurnKey   bool   `db:"turn_key"`
-	Note      string `db:"note"`
-	Bedrooms  int64  `db:"bedrooms"`
-	Bathrooms int64  `db:"bathrooms"`
+	ID             int64  `db:"id"`
+	PropertyID     string `db:"property_id"`
+	StreetNumber   string `db:"street_number"`
+	Street         string `db:"street"`
+	StreetSuffix   string `db:"street_suffix"`
+	City           string `db:"city"`
+	State          string `db:"state"`
+	Zip            string `db:"zip"`
+	Bedrooms       float32  `db:"bedrooms"`
+	Bathrooms      float32  `db:"bathrooms"`
+	Price          string `db:"price"`
+	RealEstateType string `db:"real_estate_type"`
+	PropertyType   string `db:"property_type"`
+	CreatedAt      time.Time `db:"created_at"`
+	UpdatedAt      time.Time `db:"updated_at"`
 }
 
 func (p Property) ToProperty() models.Property {
 	return models.Property{
-		Address:   &p.Address,
 		Bathrooms: p.Bathrooms,
 		Bedrooms:  p.Bedrooms,
-		ID:        p.ID,
-		Note:      p.Note,
-		TurnKey:   p.TurnKey,
+		City: p.City,
+		Price: p.Price,
+		PropertyID: p.PropertyID,
+		PropertyType: p.PropertyType,
+		RealEstateType: p.RealEstateType,
+		State: p.State,
+		Street: p.Street,
+		StreetNumber: p.StreetNumber,
+		StreetSuffix: p.StreetSuffix,
+		Zip: p.Zip,
 	}
 }

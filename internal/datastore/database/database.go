@@ -14,7 +14,7 @@ type database struct {
 }
 type Database interface{
 	GetProperties() ([]models.Property, error)
-	GetProperty(propertyID int64) (models.Property, error)
+	GetProperty(propertyID string) (models.Property, error)
 	AddProperty(property models.Property) error
 }
 

@@ -78,8 +78,8 @@ func init() {
         "summary": "Gets a property by id.",
         "parameters": [
           {
-            "type": "integer",
-            "format": "int64",
+            "minLength": 1,
+            "type": "string",
             "description": "property ID",
             "name": "id",
             "in": "path",
@@ -115,33 +115,54 @@ func init() {
     },
     "property": {
       "type": "object",
-      "required": [
-        "address"
-      ],
       "properties": {
-        "address": {
-          "type": "string",
-          "minLength": 1
-        },
         "bathrooms": {
-          "type": "integer",
-          "format": "int64"
+          "type": "number",
+          "format": "float"
         },
         "bedrooms": {
-          "type": "integer",
-          "format": "int64"
+          "type": "number",
+          "format": "float"
         },
-        "id": {
-          "type": "integer",
-          "format": "int64",
-          "readOnly": true
-        },
-        "note": {
+        "city": {
           "type": "string",
           "minLength": 1
         },
-        "turn_key": {
-          "type": "boolean"
+        "price": {
+          "type": "string",
+          "minLength": 1
+        },
+        "property_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "property_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "real_estate_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street_suffix": {
+          "type": "string",
+          "minLength": 1
+        },
+        "zip": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }
@@ -208,8 +229,8 @@ func init() {
         "summary": "Gets a property by id.",
         "parameters": [
           {
-            "type": "integer",
-            "format": "int64",
+            "minLength": 1,
+            "type": "string",
             "description": "property ID",
             "name": "id",
             "in": "path",
@@ -245,33 +266,54 @@ func init() {
     },
     "property": {
       "type": "object",
-      "required": [
-        "address"
-      ],
       "properties": {
-        "address": {
-          "type": "string",
-          "minLength": 1
-        },
         "bathrooms": {
-          "type": "integer",
-          "format": "int64"
+          "type": "number",
+          "format": "float"
         },
         "bedrooms": {
-          "type": "integer",
-          "format": "int64"
+          "type": "number",
+          "format": "float"
         },
-        "id": {
-          "type": "integer",
-          "format": "int64",
-          "readOnly": true
-        },
-        "note": {
+        "city": {
           "type": "string",
           "minLength": 1
         },
-        "turn_key": {
-          "type": "boolean"
+        "price": {
+          "type": "string",
+          "minLength": 1
+        },
+        "property_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "property_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "real_estate_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street_suffix": {
+          "type": "string",
+          "minLength": 1
+        },
+        "zip": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }

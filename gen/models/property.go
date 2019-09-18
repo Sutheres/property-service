@@ -17,38 +17,94 @@ import (
 // swagger:model property
 type Property struct {
 
-	// address
-	// Required: true
-	// Min Length: 1
-	Address *string `json:"address"`
-
 	// bathrooms
-	Bathrooms int64 `json:"bathrooms,omitempty"`
+	Bathrooms float32 `json:"bathrooms,omitempty"`
 
 	// bedrooms
-	Bedrooms int64 `json:"bedrooms,omitempty"`
+	Bedrooms float32 `json:"bedrooms,omitempty"`
 
-	// id
-	// Read Only: true
-	ID int64 `json:"id,omitempty"`
-
-	// note
+	// city
 	// Min Length: 1
-	Note string `json:"note,omitempty"`
+	City string `json:"city,omitempty"`
 
-	// turn key
-	TurnKey bool `json:"turn_key,omitempty"`
+	// price
+	// Min Length: 1
+	Price string `json:"price,omitempty"`
+
+	// property id
+	// Min Length: 1
+	PropertyID string `json:"property_id,omitempty"`
+
+	// property type
+	// Min Length: 1
+	PropertyType string `json:"property_type,omitempty"`
+
+	// real estate type
+	// Min Length: 1
+	RealEstateType string `json:"real_estate_type,omitempty"`
+
+	// state
+	// Min Length: 1
+	State string `json:"state,omitempty"`
+
+	// street
+	// Min Length: 1
+	Street string `json:"street,omitempty"`
+
+	// street number
+	// Min Length: 1
+	StreetNumber string `json:"street_number,omitempty"`
+
+	// street suffix
+	// Min Length: 1
+	StreetSuffix string `json:"street_suffix,omitempty"`
+
+	// zip
+	// Min Length: 1
+	Zip string `json:"zip,omitempty"`
 }
 
 // Validate validates this property
 func (m *Property) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateAddress(formats); err != nil {
+	if err := m.validateCity(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateNote(formats); err != nil {
+	if err := m.validatePrice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePropertyID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePropertyType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRealEstateType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateState(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStreet(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStreetNumber(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStreetSuffix(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateZip(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -58,26 +114,130 @@ func (m *Property) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Property) validateAddress(formats strfmt.Registry) error {
+func (m *Property) validateCity(formats strfmt.Registry) error {
 
-	if err := validate.Required("address", "body", m.Address); err != nil {
-		return err
+	if swag.IsZero(m.City) { // not required
+		return nil
 	}
 
-	if err := validate.MinLength("address", "body", string(*m.Address), 1); err != nil {
+	if err := validate.MinLength("city", "body", string(m.City), 1); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Property) validateNote(formats strfmt.Registry) error {
+func (m *Property) validatePrice(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Note) { // not required
+	if swag.IsZero(m.Price) { // not required
 		return nil
 	}
 
-	if err := validate.MinLength("note", "body", string(m.Note), 1); err != nil {
+	if err := validate.MinLength("price", "body", string(m.Price), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validatePropertyID(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.PropertyID) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("property_id", "body", string(m.PropertyID), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validatePropertyType(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.PropertyType) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("property_type", "body", string(m.PropertyType), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateRealEstateType(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.RealEstateType) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("real_estate_type", "body", string(m.RealEstateType), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateState(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.State) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("state", "body", string(m.State), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateStreet(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Street) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("street", "body", string(m.Street), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateStreetNumber(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.StreetNumber) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("street_number", "body", string(m.StreetNumber), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateStreetSuffix(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.StreetSuffix) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("street_suffix", "body", string(m.StreetSuffix), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateZip(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Zip) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("zip", "body", string(m.Zip), 1); err != nil {
 		return err
 	}
 
