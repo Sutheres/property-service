@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453a1be-b677-4f68-8123-5f388c8a45d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/datastore/database/properties.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/add_property.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/get_properties.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/get_property.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/get_property_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/datastore/database/properties.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/datastore/database/properties_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +25,47 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="schema_migrations: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -89,7 +126,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go run main.go server">
+  <component name="RunManager" selected="Go Test.TestDatabase_AddProperty in github.com/Sutheres/property-service/internal/datastore/database">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="property" />
       <working_directory value="$PROJECT_DIR$" />
@@ -173,6 +210,28 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestDatabase_AddProperty in github.com/Sutheres/property-service/internal/datastore/database" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="property" />
+      <working_directory value="$PROJECT_DIR$/internal/datastore/database" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Sutheres/property-service/internal/datastore/database" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^TestDatabase_AddProperty$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDatabase_GetProperties in github.com/Sutheres/property-service/internal/datastore/database" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="property" />
+      <working_directory value="$PROJECT_DIR$/internal/datastore/database" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Sutheres/property-service/internal/datastore/database" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^TestDatabase_GetProperties$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestDatabase_GetProperty in github.com/Sutheres/property-service/internal/datastore/database" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="property" />
       <working_directory value="$PROJECT_DIR$/internal/datastore/database" />
@@ -184,12 +243,14 @@
       <pattern value="^TestDatabase_GetProperty$" />
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
+    <configuration name="go test github.com/Sutheres/property-service/internal/datastore/database" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="property" />
+      <working_directory value="$PROJECT_DIR$/internal/datastore/database" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Sutheres/property-service/internal/datastore/database" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -207,17 +268,21 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Go Build.go run main.go server" />
       <item itemvalue="Go Build.go run main.go worker" />
       <item itemvalue="Go Build.go run main.go migrate" />
       <item itemvalue="Go Test.TestDatabase_GetProperty in github.com/Sutheres/property-service/internal/datastore/database" />
+      <item itemvalue="Go Test.TestDatabase_GetProperties in github.com/Sutheres/property-service/internal/datastore/database" />
+      <item itemvalue="Go Test.go test github.com/Sutheres/property-service/internal/datastore/database" />
+      <item itemvalue="Go Test.TestDatabase_AddProperty in github.com/Sutheres/property-service/internal/datastore/database" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestDatabase_AddProperty in github.com/Sutheres/property-service/internal/datastore/database" />
+        <item itemvalue="Go Test.go test github.com/Sutheres/property-service/internal/datastore/database" />
+        <item itemvalue="Go Test.TestDatabase_GetProperties in github.com/Sutheres/property-service/internal/datastore/database" />
         <item itemvalue="Go Test.TestDatabase_GetProperty in github.com/Sutheres/property-service/internal/datastore/database" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -229,16 +294,6 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@625c44e9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@625c44e9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@8b6eb00" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@625c44e9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@30d5d3cc" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -277,7 +332,7 @@
       <workItem from="1568771138641" duration="9799000" />
       <workItem from="1568785277735" duration="4870000" />
       <workItem from="1568818688473" duration="3375000" />
-      <workItem from="1568822087359" duration="9670000" />
+      <workItem from="1568822087359" duration="17282000" />
     </task>
     <servers />
   </component>
@@ -331,8 +386,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/internal/datastore/database/properties.go</url>
-          <line>21</line>
+          <line>22</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/internal/datastore/database/properties.go</url>
+          <line>118</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/internal/datastore/database/properties.go</url>
+          <line>34</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/internal/datastore/database/properties_test.go</url>
+          <line>97</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/internal/datastore/database/properties.go</url>
+          <line>76</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

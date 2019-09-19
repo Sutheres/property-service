@@ -30,7 +30,7 @@ ALTER TABLE properties
 
 ALTER TABLE properties
    ADD CONSTRAINT property_types
-   CHECK (property_type = 'Single-Family' OR
+   CHECK (property_type = 'Single-family' OR
    property_type = 'Multi-family' OR
    property_type = 'Condo' OR
    property_type = 'Co-op' OR
