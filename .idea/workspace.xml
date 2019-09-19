@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453a1be-b677-4f68-8123-5f388c8a45d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/models/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/models/property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/restapi/operations/get_properties_id_parameters.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/operations/get_properties_id_parameters.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/restapi/operations/get_properties_id_urlbuilder.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/operations/get_properties_id_urlbuilder.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/get_property.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/get_property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/get_property_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/get_property_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/testdata/fixtures/fake_property.yml" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/testdata/fixtures/properties.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/get_property.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/get_property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/swagger.yml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/swagger.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/20190918015245_create_real_estate_types_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/20190918017300_create_property_types_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/datastore/database/testdata/fixtures/properties.yml" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/testdata/fixtures/properties.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +220,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@625c44e9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@625c44e9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@30d5d3cc" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -264,7 +267,7 @@
       <workItem from="1568771138641" duration="9799000" />
       <workItem from="1568785277735" duration="4870000" />
       <workItem from="1568818688473" duration="3375000" />
-      <workItem from="1568822087359" duration="240000" />
+      <workItem from="1568822087359" duration="6009000" />
     </task>
     <servers />
   </component>

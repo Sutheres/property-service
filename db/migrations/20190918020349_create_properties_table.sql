@@ -20,11 +20,40 @@ create table properties
 	updated_at timestamptz default current_timestamp
 
 );
-create unique index properties_real_estate_type_uindex
-    on properties (real_estate_type);
 
-create unique index properties_property_type_uindex
-    on properties (property_type);
+ALTER TABLE properties
+   ADD CONSTRAINT real_estate_types
+   CHECK (real_estate_type = 'Residential' OR
+   real_estate_type = 'Commercial' OR
+   real_estate_type = 'Industrial' OR
+   real_estate_type = 'Land');
+
+ALTER TABLE properties
+   ADD CONSTRAINT property_types
+   CHECK (property_type = 'Single-Family' OR
+   property_type = 'Multi-family' OR
+   property_type = 'Condo' OR
+   property_type = 'Co-op' OR
+   property_type = 'Townhouse' OR
+   property_type = 'Duplex' OR
+   property_type = 'Triple decker' OR
+   property_type = '4-plex' OR
+   property_type = 'High value home' OR
+   property_type = 'Generational' OR
+   property_type = 'Vacation home' OR
+   property_type = 'Shopping center' OR
+   property_type = 'Strip mall' OR
+   property_type = 'Medical building' OR
+   property_type = 'Educational building' OR
+   property_type = 'Hotel' OR
+   property_type = 'Office building' OR
+   property_type = 'Apartment building' OR
+   property_type = 'Manufacturing building' OR
+   property_type = 'Warehouse' OR
+   property_type = 'Other' OR
+   property_type = 'Vacant land' OR
+   property_type = 'Working farm' OR
+   property_type = 'Ranch');
 
 -- migrate:down
 

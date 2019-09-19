@@ -22,5 +22,5 @@
   bedrooms: 2
   bathrooms: 1
   price: 35,000
-  real_estate_type: Commercial
-  property_type: Single-family
+  real_estate_type: Residential
+  property_type: Multi-family

@@ -32,7 +32,9 @@ CREATE TABLE public.properties (
     real_estate_type text NOT NULL,
     property_type text NOT NULL,
     created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP
+    updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT property_types CHECK (((property_type = 'Single-Family'::text) OR (property_type = 'Multi-family'::text) OR (property_type = 'Condo'::text) OR (property_type = 'Co-op'::text) OR (property_type = 'Townhouse'::text) OR (property_type = 'Duplex'::text) OR (property_type = 'Triple decker'::text) OR (property_type = '4-plex'::text) OR (property_type = 'High value home'::text) OR (property_type = 'Generational'::text) OR (property_type = 'Vacation home'::text) OR (property_type = 'Shopping center'::text) OR (property_type = 'Strip mall'::text) OR (property_type = 'Medical building'::text) OR (property_type = 'Educational building'::text) OR (property_type = 'Hotel'::text) OR (property_type = 'Office building'::text) OR (property_type = 'Apartment building'::text) OR (property_type = 'Manufacturing building'::text) OR (property_type = 'Warehouse'::text) OR (property_type = 'Other'::text) OR (property_type = 'Vacant land'::text) OR (property_type = 'Working farm'::text) OR (property_type = 'Ranch'::text))),
+    CONSTRAINT real_estate_types CHECK (((real_estate_type = 'Residential'::text) OR (real_estate_type = 'Commercial'::text) OR (real_estate_type = 'Industrial'::text) OR (real_estate_type = 'Land'::text)))
 );
 
 
@@ -56,68 +58,6 @@ ALTER SEQUENCE public.properties_id_seq OWNED BY public.properties.id;
 
 
 --
--- Name: property_types; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.property_types (
-    id bigint NOT NULL,
-    property_type text NOT NULL,
-    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP
-);
-
-
---
--- Name: property_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.property_types_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: property_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.property_types_id_seq OWNED BY public.property_types.id;
-
-
---
--- Name: real_estate_types; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.real_estate_types (
-    id bigint NOT NULL,
-    real_estate_type text NOT NULL,
-    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP
-);
-
-
---
--- Name: real_estate_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.real_estate_types_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: real_estate_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.real_estate_types_id_seq OWNED BY public.real_estate_types.id;
-
-
---
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -134,20 +74,6 @@ ALTER TABLE ONLY public.properties ALTER COLUMN id SET DEFAULT nextval('public.p
 
 
 --
--- Name: property_types id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.property_types ALTER COLUMN id SET DEFAULT nextval('public.property_types_id_seq'::regclass);
-
-
---
--- Name: real_estate_types id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.real_estate_types ALTER COLUMN id SET DEFAULT nextval('public.real_estate_types_id_seq'::regclass);
-
-
---
 -- Name: properties properties_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -156,41 +82,11 @@ ALTER TABLE ONLY public.properties
 
 
 --
--- Name: property_types property_types_pk; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.property_types
-    ADD CONSTRAINT property_types_pk PRIMARY KEY (id);
-
-
---
--- Name: real_estate_types real_estate_types_pk; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.real_estate_types
-    ADD CONSTRAINT real_estate_types_pk PRIMARY KEY (id);
-
-
---
 -- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
-
-
---
--- Name: properties_property_type_uindex; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX properties_property_type_uindex ON public.properties USING btree (property_type);
-
-
---
--- Name: properties_real_estate_type_uindex; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX properties_real_estate_type_uindex ON public.properties USING btree (real_estate_type);
 
 
 --
@@ -203,6 +99,4 @@ CREATE UNIQUE INDEX properties_real_estate_type_uindex ON public.properties USIN
 --
 
 INSERT INTO public.schema_migrations (version) VALUES
-    ('20190918015245'),
-    ('20190918017300'),
     ('20190918020349');
