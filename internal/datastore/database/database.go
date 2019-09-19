@@ -1,11 +1,9 @@
 package database
 
 import (
-	"github.com/Sutheres/property-service/internal/models"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 	"github.com/pkg/errors"
-
 )
 
 type database struct {
@@ -13,9 +11,7 @@ type database struct {
 	url string
 }
 type Database interface{
-	GetProperties() ([]models.Property, error)
-	GetProperty(propertyID string) (models.Property, error)
-	AddProperty(property models.Property) error
+	propertyQueries
 }
 
 func NewDatastore(dbUrl string) (Database, error) {
