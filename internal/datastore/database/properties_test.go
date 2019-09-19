@@ -27,7 +27,6 @@ func TestDatabase_GetProperties(t *testing.T) {
 }
 
 func TestDatabase_AddProperty(t *testing.T) {
-
 	p1 := models.Property{
 		PropertyID:     "property1",
 		StreetNumber:   "2933",

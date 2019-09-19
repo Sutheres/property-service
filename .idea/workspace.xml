@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453a1be-b677-4f68-8123-5f388c8a45d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/properties.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/datastore/database/properties_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -332,7 +328,7 @@
       <workItem from="1568771138641" duration="9799000" />
       <workItem from="1568785277735" duration="4870000" />
       <workItem from="1568818688473" duration="3375000" />
-      <workItem from="1568822087359" duration="17282000" />
+      <workItem from="1568822087359" duration="18122000" />
     </task>
     <servers />
   </component>
@@ -391,22 +387,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/internal/datastore/database/properties.go</url>
-          <line>118</line>
+          <line>126</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/internal/datastore/database/properties.go</url>
-          <line>34</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/internal/datastore/database/properties_test.go</url>
-          <line>97</line>
+          <line>96</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/internal/datastore/database/properties.go</url>
-          <line>76</line>
+          <line>77</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
