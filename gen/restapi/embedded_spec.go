@@ -98,6 +98,21 @@ func init() {
     }
   },
   "definitions": {
+    "Image": {
+      "type": "object",
+      "title": "Image",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
     "error": {
       "type": "object",
       "required": [
@@ -128,6 +143,21 @@ func init() {
           "type": "string",
           "minLength": 1
         },
+        "created_at": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Image"
+          }
+        },
+        "note": {
+          "type": "string"
+        },
         "price": {
           "type": "string",
           "minLength": 1
@@ -143,6 +173,9 @@ func init() {
         "real_estate_type": {
           "type": "string",
           "minLength": 1
+        },
+        "square_feet": {
+          "type": "number"
         },
         "state": {
           "type": "string",
@@ -249,6 +282,21 @@ func init() {
     }
   },
   "definitions": {
+    "Image": {
+      "type": "object",
+      "title": "Image",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
     "error": {
       "type": "object",
       "required": [
@@ -279,6 +327,21 @@ func init() {
           "type": "string",
           "minLength": 1
         },
+        "created_at": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Image"
+          }
+        },
+        "note": {
+          "type": "string"
+        },
         "price": {
           "type": "string",
           "minLength": 1
@@ -294,6 +357,9 @@ func init() {
         "real_estate_type": {
           "type": "string",
           "minLength": 1
+        },
+        "square_feet": {
+          "type": "number"
         },
         "state": {
           "type": "string",

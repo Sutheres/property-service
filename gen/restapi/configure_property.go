@@ -13,7 +13,7 @@ import (
 	"github.com/Sutheres/property-service/gen/restapi/operations"
 )
 
-//go:generate swagger generate server --target ../../gen --name Property --spec ../../swagger/swagger.yml --exclude-main
+//go:generate swagger generate server --target ../../gen --name Property --spec ../../swagger/api.yml --exclude-main
 
 func configureFlags(api *operations.PropertyAPI) {
 	// api.CommandLineOptionsGroups = []swag.CommandLineOptionsGroup{ ... }

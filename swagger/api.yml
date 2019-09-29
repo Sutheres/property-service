@@ -83,6 +83,18 @@ definitions:
       property_type:
         type: string
         minLength: 1
+      created_at:
+        type: string
+      square_feet:
+        type: number
+      description:
+        type: string
+      note:
+        type: string
+      images:
+        type: array
+        items:
+          $ref: '#/definitions/Image'
   error:
     type: object
     required:
@@ -92,6 +104,16 @@ definitions:
         type: integer
         format: int64
       message:
+        type: string
+  Image:
+    title: Image
+    type: object
+    properties:
+      id:
+        type: string
+      title:
+        type: string
+      url:
         type: string
 schemes:
   - http

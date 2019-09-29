@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -27,6 +29,18 @@ type Property struct {
 	// Min Length: 1
 	City string `json:"city,omitempty"`
 
+	// created at
+	CreatedAt string `json:"created_at,omitempty"`
+
+	// description
+	Description string `json:"description,omitempty"`
+
+	// images
+	Images []*Image `json:"images"`
+
+	// note
+	Note string `json:"note,omitempty"`
+
 	// price
 	// Min Length: 1
 	Price string `json:"price,omitempty"`
@@ -42,6 +56,9 @@ type Property struct {
 	// real estate type
 	// Min Length: 1
 	RealEstateType string `json:"real_estate_type,omitempty"`
+
+	// square feet
+	SquareFeet float64 `json:"square_feet,omitempty"`
 
 	// state
 	// Min Length: 1
@@ -69,6 +86,10 @@ func (m *Property) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCity(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateImages(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -122,6 +143,31 @@ func (m *Property) validateCity(formats strfmt.Registry) error {
 
 	if err := validate.MinLength("city", "body", string(m.City), 1); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Property) validateImages(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Images) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Images); i++ {
+		if swag.IsZero(m.Images[i]) { // not required
+			continue
+		}
+
+		if m.Images[i] != nil {
+			if err := m.Images[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("images" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

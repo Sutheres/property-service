@@ -8,4 +8,4 @@ setup:
 	go install github.com/golang/mock/mockgen
 
 gen: clean
-	swagger generate server -t gen -f ./swagger/swagger.yml --exclude-main -A property
+	swagger generate server -t gen -f ./swagger/api.yml --exclude-main -A property
