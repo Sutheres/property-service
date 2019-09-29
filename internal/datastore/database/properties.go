@@ -120,7 +120,7 @@ func (d *database) AddProperty(p models.Property) error {
 		return errors.Wrap(errors.New("Invalid property type"), "Error: ")
 	}
 
-	now := time.Now()
+	now := time.Now().String()
 	p.CreatedAt = now
 	p.UpdatedAt = now
 

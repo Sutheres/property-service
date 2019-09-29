@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453a1be-b677-4f68-8123-5f388c8a45d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/models/Image.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/models/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/models/property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/restapi/configure_property.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/configure_property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/swagger.yml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/api.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/datastore/database/properties.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +62,7 @@
         <item name="property_test: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="schema_migrations: table" type="69fad909:PgImplModel$LocalTable" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -294,7 +290,22 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@52ddc464" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@52ddc464" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@442b667e" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@52ddc464" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@276c1b1" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -335,7 +346,7 @@
       <workItem from="1569014023889" duration="599000" />
       <workItem from="1569015408967" duration="10000" />
       <workItem from="1569279714046" duration="2889000" />
-      <workItem from="1569790391171" duration="2177000" />
+      <workItem from="1569790391171" duration="7483000" />
     </task>
     <servers />
   </component>

@@ -14,6 +14,58 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: images; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.images (
+    id bigint NOT NULL,
+    title text NOT NULL,
+    url text NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    property_id bigint NOT NULL
+);
+
+
+--
+-- Name: images_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.images_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.images_id_seq OWNED BY public.images.id;
+
+
+--
+-- Name: images_property_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.images_property_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: images_property_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.images_property_id_seq OWNED BY public.images.property_id;
+
+
+--
 -- Name: properties; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -33,6 +85,10 @@ CREATE TABLE public.properties (
     property_type text NOT NULL,
     created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    square_feet real NOT NULL,
+    description text NOT NULL,
+    status text NOT NULL,
+    note text,
     CONSTRAINT property_types CHECK (((property_type = 'Single-family'::text) OR (property_type = 'Multi-family'::text) OR (property_type = 'Condo'::text) OR (property_type = 'Co-op'::text) OR (property_type = 'Townhouse'::text) OR (property_type = 'Duplex'::text) OR (property_type = 'Triple decker'::text) OR (property_type = '4-plex'::text) OR (property_type = 'High value home'::text) OR (property_type = 'Generational'::text) OR (property_type = 'Vacation home'::text) OR (property_type = 'Shopping center'::text) OR (property_type = 'Strip mall'::text) OR (property_type = 'Medical building'::text) OR (property_type = 'Educational building'::text) OR (property_type = 'Hotel'::text) OR (property_type = 'Office building'::text) OR (property_type = 'Apartment building'::text) OR (property_type = 'Manufacturing building'::text) OR (property_type = 'Warehouse'::text) OR (property_type = 'Other'::text) OR (property_type = 'Vacant land'::text) OR (property_type = 'Working farm'::text) OR (property_type = 'Ranch'::text))),
     CONSTRAINT real_estate_types CHECK (((real_estate_type = 'Residential'::text) OR (real_estate_type = 'Commercial'::text) OR (real_estate_type = 'Industrial'::text) OR (real_estate_type = 'Land'::text)))
 );
@@ -67,10 +123,32 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: images id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.images ALTER COLUMN id SET DEFAULT nextval('public.images_id_seq'::regclass);
+
+
+--
+-- Name: images property_id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.images ALTER COLUMN property_id SET DEFAULT nextval('public.images_property_id_seq'::regclass);
+
+
+--
 -- Name: properties id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.properties ALTER COLUMN id SET DEFAULT nextval('public.properties_id_seq'::regclass);
+
+
+--
+-- Name: images images_pk; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.images
+    ADD CONSTRAINT images_pk PRIMARY KEY (id);
 
 
 --
@@ -90,6 +168,14 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: images properties_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.images
+    ADD CONSTRAINT properties_fkey FOREIGN KEY (property_id) REFERENCES public.properties(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -99,4 +185,7 @@ ALTER TABLE ONLY public.schema_migrations
 --
 
 INSERT INTO public.schema_migrations (version) VALUES
-    ('20190918020349');
+    ('20190918020349'),
+    ('20190929213424'),
+    ('20190929214219'),
+    ('20190929222231');
