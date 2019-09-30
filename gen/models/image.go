@@ -15,11 +15,20 @@ import (
 // swagger:model Image
 type Image struct {
 
+	// created at
+	CreatedAt string `json:"created_at,omitempty"`
+
 	// id
 	ID string `json:"id,omitempty"`
 
+	// property id
+	PropertyID string `json:"property_id,omitempty"`
+
 	// title
 	Title string `json:"title,omitempty"`
+
+	// updated at
+	UpdatedAt string `json:"updated_at,omitempty"`
 
 	// url
 	URL string `json:"url,omitempty"`

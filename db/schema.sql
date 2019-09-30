@@ -23,7 +23,7 @@ CREATE TABLE public.images (
     url text NOT NULL,
     created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
-    property_id bigint NOT NULL
+    property_id text NOT NULL
 );
 
 
@@ -44,25 +44,6 @@ CREATE SEQUENCE public.images_id_seq
 --
 
 ALTER SEQUENCE public.images_id_seq OWNED BY public.images.id;
-
-
---
--- Name: images_property_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.images_property_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: images_property_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.images_property_id_seq OWNED BY public.images.property_id;
 
 
 --
@@ -130,13 +111,6 @@ ALTER TABLE ONLY public.images ALTER COLUMN id SET DEFAULT nextval('public.image
 
 
 --
--- Name: images property_id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.images ALTER COLUMN property_id SET DEFAULT nextval('public.images_property_id_seq'::regclass);
-
-
---
 -- Name: properties id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -156,7 +130,7 @@ ALTER TABLE ONLY public.images
 --
 
 ALTER TABLE ONLY public.properties
-    ADD CONSTRAINT properties_pk PRIMARY KEY (id);
+    ADD CONSTRAINT properties_pk PRIMARY KEY (property_id);
 
 
 --
@@ -172,7 +146,7 @@ ALTER TABLE ONLY public.schema_migrations
 --
 
 ALTER TABLE ONLY public.images
-    ADD CONSTRAINT properties_fkey FOREIGN KEY (property_id) REFERENCES public.properties(id);
+    ADD CONSTRAINT properties_fkey FOREIGN KEY (property_id) REFERENCES public.properties(property_id);
 
 
 --

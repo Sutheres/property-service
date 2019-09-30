@@ -102,10 +102,19 @@ func init() {
       "type": "object",
       "title": "Image",
       "properties": {
+        "created_at": {
+          "type": "string"
+        },
         "id": {
           "type": "string"
         },
+        "property_id": {
+          "type": "string"
+        },
         "title": {
+          "type": "string"
+        },
+        "updated_at": {
           "type": "string"
         },
         "url": {
@@ -286,10 +295,19 @@ func init() {
       "type": "object",
       "title": "Image",
       "properties": {
+        "created_at": {
+          "type": "string"
+        },
         "id": {
           "type": "string"
         },
+        "property_id": {
+          "type": "string"
+        },
         "title": {
+          "type": "string"
+        },
+        "updated_at": {
           "type": "string"
         },
         "url": {

@@ -27,6 +27,8 @@ func TestDatabase_GetProperties(t *testing.T) {
 }
 
 func TestDatabase_AddProperty(t *testing.T) {
+
+
 	p1 := models.Property{
 		PropertyID:     "property1",
 		StreetNumber:   "2933",
@@ -40,6 +42,17 @@ func TestDatabase_AddProperty(t *testing.T) {
 		Price:          "40,000",
 		RealEstateType: "Residential",
 		PropertyType:   "Single-family",
+		Description: "description",
+		Status: "Prospect",
+		Note: "fake note about what it would take to fix up a property and any other relevant info",
+		Images: []*models.Image{
+			{
+				Title: "fake title",
+				URL: "https://isvr.acceleragent.com/usr/1549750369/CustomPages/images/3.jpg",
+				PropertyID: "property1",
+			},
+		},
+		SquareFeet: 2500,
 	}
 	p2 := models.Property{
 		PropertyID:     "property2",
@@ -54,6 +67,17 @@ func TestDatabase_AddProperty(t *testing.T) {
 		Price:          "40,000",
 		RealEstateType: "dfkajfhad",
 		PropertyType:   "Single-family",
+		Description: "description",
+		Status: "Prospect",
+		Note: "fake note about what it would take to fix up a property and any other relevant info",
+		Images: []*models.Image{
+			{
+				Title: "fake title",
+				URL: "https://isvr.acceleragent.com/usr/1549750369/CustomPages/images/3.jpg",
+				PropertyID: "property2",
+			},
+		},
+		SquareFeet: 2500,
 	}
 	p3 := models.Property{
 		PropertyID:     "property3",
@@ -68,6 +92,17 @@ func TestDatabase_AddProperty(t *testing.T) {
 		Price:          "40,000",
 		RealEstateType: "Residential",
 		PropertyType:   "Single-family",
+		Description: "description",
+		Status: "Prospect",
+		Note: "fake note about what it would take to fix up a property and any other relevant info",
+		Images: []*models.Image{
+			{
+				Title: "fake title",
+				URL: "https://isvr.acceleragent.com/usr/1549750369/CustomPages/images/3.jpg",
+				PropertyID: "property3",
+			},
+		},
+		SquareFeet: 2500,
 	}
 	p4 := models.Property{
 		PropertyID:     "property4",
@@ -82,6 +117,17 @@ func TestDatabase_AddProperty(t *testing.T) {
 		Price:          "40,000",
 		RealEstateType: "Residential",
 		PropertyType:   "Single-dfadsf",
+		Description: "description",
+		Status: "Prospect",
+		Note: "fake note about what it would take to fix up a property and any other relevant info",
+		Images: []*models.Image{
+			{
+				Title: "fake title",
+				URL: "https://isvr.acceleragent.com/usr/1549750369/CustomPages/images/3.jpg",
+				PropertyID: "property4",
+			},
+		},
+		SquareFeet: 2500,
 	}
 
 	properties := []addPropertyTest{
@@ -98,7 +144,7 @@ func TestDatabase_AddProperty(t *testing.T) {
 			isValid = false
 		}
 		if isValid != p.expected {
-			t.Errorf("AddProperty(%s): expected (%t), actual (%t) ", p.input.PropertyID, p.expected, isValid)
+			t.Errorf("AddProperty(%s): expected (%t), actual (%t) " + err.Error(), p.input.PropertyID, p.expected, isValid)
 		}
 	}
 }

@@ -1,10 +1,10 @@
 -- migrate:up
 create table properties
 (
-    id bigserial not null
-        constraint properties_pk
+    id bigserial not null,
+    property_id text not null
+    constraint properties_pk
         primary key,
-    property_id text not null,
     street_number text not null,
     street text not null,
     street_suffix text not null,

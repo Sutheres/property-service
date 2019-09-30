@@ -120,22 +120,29 @@ func (d *database) AddProperty(p models.Property) error {
 		return errors.Wrap(errors.New("Invalid property type"), "Error: ")
 	}
 
-	now := time.Now().String()
+	now := time.Now()
 	p.CreatedAt = now
 	p.UpdatedAt = now
 
 	tx := d.db.MustBegin()
 	_, err := tx.NamedExec(
 		"INSERT INTO properties (property_id, street_number, street, street_suffix, city, state, zip, "+
-			"bedrooms, bathrooms, price, real_estate_type, property_type, created_at, updated_at) "+
+			"bedrooms, bathrooms, price, real_estate_type, property_type, square_feet, status, description, note, created_at, updated_at) "+
 			"VALUES (:property_id, :street_number, :street, :street_suffix, :city, :state, :zip, "+
-			":bedrooms, :bathrooms, :price, :real_estate_type, :property_type, :created_at, :updated_at)", &p)
+			":bedrooms, :bathrooms, :price, :real_estate_type, :property_type, :square_feet, :status, :description, :note, :created_at, :updated_at)", &p)
 	if err != nil {
-		return errors.Wrap(err, "AddProperty.NamedExec")
+		return errors.Wrap(err, "NamedExec")
 	}
 	err = tx.Commit()
 	if err != nil {
-		return errors.Wrap(err, "AddProperty.Commit")
+		return errors.Wrap(err, "Commit")
+	}
+
+	for _, i :=range p.Images {
+		err := d.InsertImage(*i)
+		if err != nil {
+			return errors.Wrap(err, "InsertImage")
+		}
 	}
 	return nil
 }

@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/Sutheres/property-service/gen/models"
+	"time"
 )
 
 type Property struct {
@@ -23,8 +24,8 @@ type Property struct {
 	Images         []*Image `db:"images"`
 	RealEstateType string   `db:"real_estate_type"`
 	PropertyType   string   `db:"property_type"`
-	CreatedAt      string   `db:"created_at"`
-	UpdatedAt      string   `db:"updated_at"`
+	CreatedAt      time.Time   `db:"created_at"`
+	UpdatedAt      time.Time   `db:"updated_at"`
 }
 
 func (p Property) ToProperty() models.Property {
@@ -49,7 +50,7 @@ func (p Property) ToProperty() models.Property {
 		StreetNumber:   p.StreetNumber,
 		StreetSuffix:   p.StreetSuffix,
 		Zip:            p.Zip,
-		CreatedAt:      p.CreatedAt,
+		CreatedAt:      p.CreatedAt.String(),
 		SquareFeet:     p.SquareFeet,
 		Description:    p.Description,
 		Note:           p.Note,

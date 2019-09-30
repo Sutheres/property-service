@@ -115,6 +115,12 @@ definitions:
         type: string
       url:
         type: string
+      property_id:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
 schemes:
   - http
 produces:

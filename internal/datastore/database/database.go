@@ -12,6 +12,7 @@ type database struct {
 }
 type Database interface{
 	propertyQueries
+	imageQueries
 }
 
 func NewDatastore(dbUrl string) (Database, error) {
