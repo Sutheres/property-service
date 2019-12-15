@@ -23,11 +23,11 @@ func NewGetPropertiesParams() GetPropertiesParams {
 	var (
 		// initialize parameters with default values
 
-		limitDefault = int32(20)
+		pageDefault = int32(20)
 	)
 
 	return GetPropertiesParams{
-		Limit: &limitDefault,
+		Page: &pageDefault,
 	}
 }
 
@@ -44,11 +44,11 @@ type GetPropertiesParams struct {
 	  In: query
 	  Default: 20
 	*/
-	Limit *int32
+	Page *int32
 	/*
 	  In: query
 	*/
-	Since *int64
+	PerPage *int64
 }
 
 // BindRequest both binds and validates a request, it assumes that complex things implement a Validatable(strfmt.Registry) error interface
@@ -62,13 +62,13 @@ func (o *GetPropertiesParams) BindRequest(r *http.Request, route *middleware.Mat
 
 	qs := runtime.Values(r.URL.Query())
 
-	qLimit, qhkLimit, _ := qs.GetOK("limit")
-	if err := o.bindLimit(qLimit, qhkLimit, route.Formats); err != nil {
+	qPage, qhkPage, _ := qs.GetOK("page")
+	if err := o.bindPage(qPage, qhkPage, route.Formats); err != nil {
 		res = append(res, err)
 	}
 
-	qSince, qhkSince, _ := qs.GetOK("since")
-	if err := o.bindSince(qSince, qhkSince, route.Formats); err != nil {
+	qPerPage, qhkPerPage, _ := qs.GetOK("per_page")
+	if err := o.bindPerPage(qPerPage, qhkPerPage, route.Formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -78,8 +78,8 @@ func (o *GetPropertiesParams) BindRequest(r *http.Request, route *middleware.Mat
 	return nil
 }
 
-// bindLimit binds and validates parameter Limit from query.
-func (o *GetPropertiesParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+// bindPage binds and validates parameter Page from query.
+func (o *GetPropertiesParams) bindPage(rawData []string, hasKey bool, formats strfmt.Registry) error {
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -94,15 +94,15 @@ func (o *GetPropertiesParams) bindLimit(rawData []string, hasKey bool, formats s
 
 	value, err := swag.ConvertInt32(raw)
 	if err != nil {
-		return errors.InvalidType("limit", "query", "int32", raw)
+		return errors.InvalidType("page", "query", "int32", raw)
 	}
-	o.Limit = &value
+	o.Page = &value
 
 	return nil
 }
 
-// bindSince binds and validates parameter Since from query.
-func (o *GetPropertiesParams) bindSince(rawData []string, hasKey bool, formats strfmt.Registry) error {
+// bindPerPage binds and validates parameter PerPage from query.
+func (o *GetPropertiesParams) bindPerPage(rawData []string, hasKey bool, formats strfmt.Registry) error {
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -116,9 +116,9 @@ func (o *GetPropertiesParams) bindSince(rawData []string, hasKey bool, formats s
 
 	value, err := swag.ConvertInt64(raw)
 	if err != nil {
-		return errors.InvalidType("since", "query", "int64", raw)
+		return errors.InvalidType("per_page", "query", "int64", raw)
 	}
-	o.Since = &value
+	o.PerPage = &value
 
 	return nil
 }

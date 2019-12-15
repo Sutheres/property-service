@@ -8,20 +8,21 @@ package operations
 import (
 	"net/http"
 
+	"github.com/Sutheres/property-service/internal/auth"
 	middleware "github.com/go-openapi/runtime/middleware"
 )
 
 // GetPropertiesIDHandlerFunc turns a function with the right signature into a get properties ID handler
-type GetPropertiesIDHandlerFunc func(GetPropertiesIDParams) middleware.Responder
+type GetPropertiesIDHandlerFunc func(GetPropertiesIDParams, *auth.AuthUser) middleware.Responder
 
 // Handle executing the request and returning a response
-func (fn GetPropertiesIDHandlerFunc) Handle(params GetPropertiesIDParams) middleware.Responder {
-	return fn(params)
+func (fn GetPropertiesIDHandlerFunc) Handle(params GetPropertiesIDParams, principal *auth.AuthUser) middleware.Responder {
+	return fn(params, principal)
 }
 
 // GetPropertiesIDHandler interface for that can handle valid get properties ID params
 type GetPropertiesIDHandler interface {
-	Handle(GetPropertiesIDParams) middleware.Responder
+	Handle(GetPropertiesIDParams, *auth.AuthUser) middleware.Responder
 }
 
 // NewGetPropertiesID creates a new http.Handler for the get properties ID operation
@@ -46,12 +47,25 @@ func (o *GetPropertiesID) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 	}
 	var Params = NewGetPropertiesIDParams()
 
+	uprinc, aCtx, err := o.Context.Authorize(r, route)
+	if err != nil {
+		o.Context.Respond(rw, r, route.Produces, route, err)
+		return
+	}
+	if aCtx != nil {
+		r = aCtx
+	}
+	var principal *auth.AuthUser
+	if uprinc != nil {
+		principal = uprinc.(*auth.AuthUser) // this is really a auth.AuthUser, I promise
+	}
+
 	if err := o.Context.BindValidRequest(r, route, &Params); err != nil { // bind params
 		o.Context.Respond(rw, r, route.Produces, route, err)
 		return
 	}
 
-	res := o.Handler.Handle(Params) // actually handle the request
+	res := o.Handler.Handle(Params, principal) // actually handle the request
 
 	o.Context.Respond(rw, r, route.Produces, route, res)
 

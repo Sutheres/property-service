@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/Sutheres/property-service/internal/auth"
 	errors "github.com/go-openapi/errors"
 	loads "github.com/go-openapi/loads"
 	runtime "github.com/go-openapi/runtime"
@@ -37,12 +38,20 @@ func NewPropertyAPI(spec *loads.Document) *PropertyAPI {
 		BearerAuthenticator: security.BearerAuth,
 		JSONConsumer:        runtime.JSONConsumer(),
 		JSONProducer:        runtime.JSONProducer(),
-		GetPropertiesHandler: GetPropertiesHandlerFunc(func(params GetPropertiesParams) middleware.Responder {
+		GetPropertiesHandler: GetPropertiesHandlerFunc(func(params GetPropertiesParams, principal *auth.AuthUser) middleware.Responder {
 			return middleware.NotImplemented("operation GetProperties has not yet been implemented")
 		}),
-		GetPropertiesIDHandler: GetPropertiesIDHandlerFunc(func(params GetPropertiesIDParams) middleware.Responder {
+		GetPropertiesIDHandler: GetPropertiesIDHandlerFunc(func(params GetPropertiesIDParams, principal *auth.AuthUser) middleware.Responder {
 			return middleware.NotImplemented("operation GetPropertiesID has not yet been implemented")
 		}),
+
+		// Applies when the "Authorization" header is set
+		BearerAuth: func(token string) (*auth.AuthUser, error) {
+			return nil, errors.NotImplemented("api key auth (Bearer) Authorization from header param [Authorization] has not yet been implemented")
+		},
+
+		// default authorizer is authorized meaning no requests are blocked
+		APIAuthorizer: security.Authorized(),
 	}
 }
 
@@ -73,6 +82,13 @@ type PropertyAPI struct {
 
 	// JSONProducer registers a producer for a "application/json" mime type
 	JSONProducer runtime.Producer
+
+	// BearerAuth registers a function that takes a token and returns a principal
+	// it performs authentication based on an api key Authorization provided in the header
+	BearerAuth func(string) (*auth.AuthUser, error)
+
+	// APIAuthorizer provides access control (ACL/RBAC/ABAC) by providing access to the request and authenticated principal
+	APIAuthorizer runtime.Authorizer
 
 	// GetPropertiesHandler sets the operation handler for the get properties operation
 	GetPropertiesHandler GetPropertiesHandler
@@ -141,6 +157,10 @@ func (o *PropertyAPI) Validate() error {
 		unregistered = append(unregistered, "JSONProducer")
 	}
 
+	if o.BearerAuth == nil {
+		unregistered = append(unregistered, "AuthorizationAuth")
+	}
+
 	if o.GetPropertiesHandler == nil {
 		unregistered = append(unregistered, "GetPropertiesHandler")
 	}
@@ -164,14 +184,27 @@ func (o *PropertyAPI) ServeErrorFor(operationID string) func(http.ResponseWriter
 // AuthenticatorsFor gets the authenticators for the specified security schemes
 func (o *PropertyAPI) AuthenticatorsFor(schemes map[string]spec.SecurityScheme) map[string]runtime.Authenticator {
 
-	return nil
+	result := make(map[string]runtime.Authenticator)
+	for name := range schemes {
+		switch name {
+
+		case "Bearer":
+
+			scheme := schemes[name]
+			result[name] = o.APIKeyAuthenticator(scheme.Name, scheme.In, func(token string) (interface{}, error) {
+				return o.BearerAuth(token)
+			})
+
+		}
+	}
+	return result
 
 }
 
 // Authorizer returns the registered authorizer
 func (o *PropertyAPI) Authorizer() runtime.Authorizer {
 
-	return nil
+	return o.APIAuthorizer
 
 }
 

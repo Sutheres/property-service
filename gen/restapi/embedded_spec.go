@@ -33,21 +33,27 @@ func init() {
     "title": "A Property management application",
     "version": "1.0.0"
   },
+  "host": "example.com",
   "paths": {
     "/properties": {
       "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "parameters": [
           {
             "type": "integer",
             "format": "int64",
-            "name": "since",
+            "name": "per_page",
             "in": "query"
           },
           {
             "type": "integer",
             "format": "int32",
             "default": 20,
-            "name": "limit",
+            "name": "page",
             "in": "query"
           }
         ],
@@ -75,6 +81,11 @@ func init() {
     },
     "/properties/{id}": {
       "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "summary": "Gets a property by id.",
         "parameters": [
           {
@@ -92,9 +103,30 @@ func init() {
             "schema": {
               "$ref": "#/definitions/property"
             }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object"
+            }
           }
         }
-      }
+      },
+      "parameters": [
+        {
+          "type": "integer",
+          "description": "property id",
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ]
     }
   },
   "definitions": {
@@ -207,6 +239,38 @@ func init() {
           "minLength": 1
         }
       }
+    }
+  },
+  "parameters": {
+    "page": {
+      "type": "integer",
+      "format": "int32",
+      "default": 1,
+      "description": "page parameter for pagination",
+      "name": "page",
+      "in": "query"
+    },
+    "per_page": {
+      "type": "integer",
+      "format": "int32",
+      "default": 300,
+      "description": "results per page",
+      "name": "per_page",
+      "in": "query"
+    },
+    "sort": {
+      "type": "string",
+      "description": "sorting field",
+      "name": "sort",
+      "in": "query"
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "description": "JWT Token",
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
     }
   }
 }`))
@@ -226,21 +290,27 @@ func init() {
     "title": "A Property management application",
     "version": "1.0.0"
   },
+  "host": "example.com",
   "paths": {
     "/properties": {
       "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "parameters": [
           {
             "type": "integer",
             "format": "int64",
-            "name": "since",
+            "name": "per_page",
             "in": "query"
           },
           {
             "type": "integer",
             "format": "int32",
             "default": 20,
-            "name": "limit",
+            "name": "page",
             "in": "query"
           }
         ],
@@ -268,6 +338,11 @@ func init() {
     },
     "/properties/{id}": {
       "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "summary": "Gets a property by id.",
         "parameters": [
           {
@@ -285,9 +360,30 @@ func init() {
             "schema": {
               "$ref": "#/definitions/property"
             }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object"
+            }
           }
         }
-      }
+      },
+      "parameters": [
+        {
+          "type": "integer",
+          "description": "property id",
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ]
     }
   },
   "definitions": {
@@ -400,6 +496,38 @@ func init() {
           "minLength": 1
         }
       }
+    }
+  },
+  "parameters": {
+    "page": {
+      "type": "integer",
+      "format": "int32",
+      "default": 1,
+      "description": "page parameter for pagination",
+      "name": "page",
+      "in": "query"
+    },
+    "per_page": {
+      "type": "integer",
+      "format": "int32",
+      "default": 300,
+      "description": "results per page",
+      "name": "per_page",
+      "in": "query"
+    },
+    "sort": {
+      "type": "string",
+      "description": "sorting field",
+      "name": "sort",
+      "in": "query"
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "description": "JWT Token",
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
     }
   }
 }`))

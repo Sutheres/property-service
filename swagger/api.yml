@@ -18,14 +18,32 @@ paths:
           description: Successful operation
           schema:
             $ref: '#/definitions/property'
+        '201':
+          description: Created
+          schema:
+            type: object
+            properties: {}
+        '400':
+          description: Bad Request
+          schema:
+            type: object
+            properties: {}
+      security:
+        - Bearer: []
+    parameters:
+      - type: integer
+        name: id
+        in: path
+        required: true
+        description: property id
   /properties:
     get:
       parameters:
-        - name: since
+        - name: per_page
           in: query
           type: integer
           format: int64
-        - name: limit
+        - name: page
           in: query
           type: integer
           format: int32
@@ -43,6 +61,28 @@ paths:
           description: generic error response
           schema:
             $ref: '#/definitions/error'
+      security:
+        - Bearer: []
+parameters:
+  per_page:
+    in: query
+    name: per_page
+    type: integer
+    description: results per page
+    format: int32
+    default: 300
+  page:
+    in: query
+    name: page
+    type: integer
+    description: page parameter for pagination
+    format: int32
+    default: 1
+  sort:
+    name: sort
+    in: query
+    type: string
+    description: sorting field
 definitions:
   property:
     type: object
@@ -128,3 +168,10 @@ produces:
 consumes:
   - application/json
 swagger: '2.0'
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: JWT Token
+host: example.com

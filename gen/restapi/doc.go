@@ -7,7 +7,7 @@ A PoC for future use
 
     Schemes:
       http
-    Host: localhost
+    Host: example.com
     BasePath: /
     Version: 1.0.0
 

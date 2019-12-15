@@ -2,22 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453a1be-b677-4f68-8123-5f388c8a45d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/datastore/database/images.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/datastore/database/images_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/auth/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/20190918020349_create_properties_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/20190929222231_alter_images_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/20190929222231_alter_images_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/models/image.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/models/image.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/restapi/configure_property.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/configure_property.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/restapi/doc.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/doc.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/embedded_spec.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/properties.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/datastore/database/properties_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/datastore/database/properties_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/Image.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/Image.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/property.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/restapi/operations/get_properties.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/operations/get_properties.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/restapi/operations/get_properties_id.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/operations/get_properties_id.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/restapi/operations/get_properties_parameters.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/operations/get_properties_parameters.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/restapi/operations/get_properties_urlbuilder.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/operations/get_properties_urlbuilder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/restapi/operations/property_api.go" beforeDir="false" afterPath="$PROJECT_DIR$/gen/restapi/operations/property_api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/configure.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/configure.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swagger/api.yml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/api.yml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,51 +41,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="property-local-test" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="property_test: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="images: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
     </expand>
     <select />
   </component>
@@ -94,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="$USER_HOME$/go/go1.13.5" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -102,13 +59,22 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1PgJGwLOIVmaq2CJ5fBmLilfuK7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -124,7 +90,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -134,19 +100,7 @@
       <recent name="$PROJECT_DIR$/swagger" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Go Test.TestDatabase_AddProperty in github.com/Sutheres/property-service/internal/datastore/database">
+  <component name="RunManager" selected="Go Build.go run main.go server">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="property" />
       <working_directory value="$PROJECT_DIR$" />
@@ -252,17 +206,6 @@
       <pattern value="^TestDatabase_GetProperties$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestDatabase_GetProperty in github.com/Sutheres/property-service/internal/datastore/database" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="property" />
-      <working_directory value="$PROJECT_DIR$/internal/datastore/database" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/Sutheres/property-service/internal/datastore/database" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^TestDatabase_GetProperty$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestDatabase_InsertImage in github.com/Sutheres/property-service/internal/datastore/database" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="property" />
       <working_directory value="$PROJECT_DIR$/internal/datastore/database" />
@@ -284,49 +227,42 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="setup" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="setup" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go run main.go server" />
       <item itemvalue="Go Build.go run main.go worker" />
       <item itemvalue="Go Build.go run main.go migrate" />
-      <item itemvalue="Go Test.TestDatabase_GetProperty in github.com/Sutheres/property-service/internal/datastore/database" />
       <item itemvalue="Go Test.TestDatabase_GetProperties in github.com/Sutheres/property-service/internal/datastore/database" />
       <item itemvalue="Go Test.go test github.com/Sutheres/property-service/internal/datastore/database" />
       <item itemvalue="Go Test.TestDatabase_AddProperty in github.com/Sutheres/property-service/internal/datastore/database" />
       <item itemvalue="Go Test.TestDatabase_InsertImage in github.com/Sutheres/property-service/internal/datastore/database" />
+      <item itemvalue="Makefile.setup" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile.setup" />
         <item itemvalue="Go Test.TestDatabase_AddProperty in github.com/Sutheres/property-service/internal/datastore/database" />
         <item itemvalue="Go Test.TestDatabase_InsertImage in github.com/Sutheres/property-service/internal/datastore/database" />
         <item itemvalue="Go Test.go test github.com/Sutheres/property-service/internal/datastore/database" />
         <item itemvalue="Go Test.TestDatabase_GetProperties in github.com/Sutheres/property-service/internal/datastore/database" />
-        <item itemvalue="Go Test.TestDatabase_GetProperty in github.com/Sutheres/property-service/internal/datastore/database" />
       </list>
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@52ddc464" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@52ddc464" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6667cc1c" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@52ddc464" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1daf9a7" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -365,6 +301,13 @@
       <workItem from="1569015408967" duration="10000" />
       <workItem from="1569279714046" duration="2889000" />
       <workItem from="1569790391171" duration="18371000" />
+      <workItem from="1576274290313" duration="448000" />
+      <workItem from="1576274752457" duration="526000" />
+      <workItem from="1576275293380" duration="620000" />
+      <workItem from="1576276022213" duration="5190000" />
+      <workItem from="1576282653409" duration="1344000" />
+      <workItem from="1576370520246" duration="889000" />
+      <workItem from="1576371424438" duration="2049000" />
     </task>
     <servers />
   </component>
@@ -387,6 +330,48 @@
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="588" y="214" width="800" height="677" key="#GOPATH" timestamp="1576274802915">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="214" width="800" height="677" key="#GOPATH/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576274802915" />
+    <state x="588" y="214" width="800" height="677" key="#GOROOT" timestamp="1576274719255">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="214" width="800" height="677" key="#GOROOT/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576274719255" />
+    <state x="635" y="165" width="705" height="775" key="#TestDatabase_AddProperty_in_github.com/Sutheres/property-service/internal/datastore/database" timestamp="1576274567499">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="635" y="165" width="705" height="775" key="#TestDatabase_AddProperty_in_github.com/Sutheres/property-service/internal/datastore/database/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576274567499" />
+    <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576276051627">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576276051627" />
+    <state x="771" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576274858760">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="771" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576274858760" />
+    <state width="1354" height="260" key="GridCell.Tab.0.bottom" timestamp="1576371409058">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1354" height="260" key="GridCell.Tab.0.bottom/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576371409058" />
+    <state width="1354" height="260" key="GridCell.Tab.0.center" timestamp="1576371409058">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1354" height="260" key="GridCell.Tab.0.center/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576371409058" />
+    <state width="1354" height="260" key="GridCell.Tab.0.left" timestamp="1576371409058">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1354" height="260" key="GridCell.Tab.0.left/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576371409058" />
+    <state width="1354" height="260" key="GridCell.Tab.0.right" timestamp="1576371409058">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1354" height="260" key="GridCell.Tab.0.right/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576371409058" />
+    <state x="482" y="188" key="SettingsEditor" timestamp="1576371402960">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="482" y="188" key="SettingsEditor/67.27.1853.1053/67.27.1853.1053@67.27.1853.1053" timestamp="1576371402960" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

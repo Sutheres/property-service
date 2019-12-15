@@ -15,8 +15,8 @@ import (
 
 // GetPropertiesURL generates an URL for the get properties operation
 type GetPropertiesURL struct {
-	Limit *int32
-	Since *int64
+	Page    *int32
+	PerPage *int64
 
 	_basePath string
 	// avoid unkeyed usage
@@ -49,20 +49,20 @@ func (o *GetPropertiesURL) Build() (*url.URL, error) {
 
 	qs := make(url.Values)
 
-	var limitQ string
-	if o.Limit != nil {
-		limitQ = swag.FormatInt32(*o.Limit)
+	var pageQ string
+	if o.Page != nil {
+		pageQ = swag.FormatInt32(*o.Page)
 	}
-	if limitQ != "" {
-		qs.Set("limit", limitQ)
+	if pageQ != "" {
+		qs.Set("page", pageQ)
 	}
 
-	var sinceQ string
-	if o.Since != nil {
-		sinceQ = swag.FormatInt64(*o.Since)
+	var perPageQ string
+	if o.PerPage != nil {
+		perPageQ = swag.FormatInt64(*o.PerPage)
 	}
-	if sinceQ != "" {
-		qs.Set("since", sinceQ)
+	if perPageQ != "" {
+		qs.Set("per_page", perPageQ)
 	}
 
 	_result.RawQuery = qs.Encode()

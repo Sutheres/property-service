@@ -11,9 +11,10 @@ import (
 	middleware "github.com/go-openapi/runtime/middleware"
 
 	"github.com/Sutheres/property-service/gen/restapi/operations"
+	"github.com/Sutheres/property-service/internal/auth"
 )
 
-//go:generate swagger generate server --target ../../gen --name Property --spec ../../swagger/api.yml --exclude-main
+//go:generate swagger generate server --target ../../gen --name Property --spec ../../swagger/api.yml --principal auth.AuthUser --exclude-main
 
 func configureFlags(api *operations.PropertyAPI) {
 	// api.CommandLineOptionsGroups = []swag.CommandLineOptionsGroup{ ... }
@@ -33,13 +34,23 @@ func configureAPI(api *operations.PropertyAPI) http.Handler {
 
 	api.JSONProducer = runtime.JSONProducer()
 
+	// Applies when the "Authorization" header is set
+	api.BearerAuth = func(token string) (*auth.AuthUser, error) {
+		return nil, errors.NotImplemented("api key auth (Bearer) Authorization from header param [Authorization] has not yet been implemented")
+	}
+
+	// Set your custom authorizer if needed. Default one is security.Authorized()
+	// Expected interface runtime.Authorizer
+	//
+	// Example:
+	// api.APIAuthorizer = security.Authorized()
 	if api.GetPropertiesHandler == nil {
-		api.GetPropertiesHandler = operations.GetPropertiesHandlerFunc(func(params operations.GetPropertiesParams) middleware.Responder {
+		api.GetPropertiesHandler = operations.GetPropertiesHandlerFunc(func(params operations.GetPropertiesParams, principal *auth.AuthUser) middleware.Responder {
 			return middleware.NotImplemented("operation .GetProperties has not yet been implemented")
 		})
 	}
 	if api.GetPropertiesIDHandler == nil {
-		api.GetPropertiesIDHandler = operations.GetPropertiesIDHandlerFunc(func(params operations.GetPropertiesIDParams) middleware.Responder {
+		api.GetPropertiesIDHandler = operations.GetPropertiesIDHandlerFunc(func(params operations.GetPropertiesIDParams, principal *auth.AuthUser) middleware.Responder {
 			return middleware.NotImplemented("operation .GetPropertiesID has not yet been implemented")
 		})
 	}

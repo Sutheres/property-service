@@ -22,8 +22,7 @@ var serverCmd = &cobra.Command{
 }
 
 func startServer(cmd *cobra.Command, args []string) {
-
-	swaggerSpec, err := loads.Analyzed(restapi.SwaggerJSON, "")
+	swaggerSpec, err := loads.Analyzed(restapi.SwaggerJSON, "2.0")
 	api := operations.NewPropertyAPI(swaggerSpec)
 	if err != nil {
 		log.Panicln("Unable to analyze swaggerSpec", err)
