@@ -3,6 +3,7 @@ package cmd
 import (
 	"github.com/Sutheres/property-service/gen/restapi"
 	"github.com/Sutheres/property-service/gen/restapi/operations"
+	"github.com/Sutheres/property-service/internal/auth"
 	"github.com/Sutheres/property-service/internal/datastore/database"
 	"github.com/Sutheres/property-service/service"
 	"github.com/go-openapi/loads"
@@ -28,6 +29,9 @@ func startServer(cmd *cobra.Command, args []string) {
 		log.Panicln("Unable to analyze swaggerSpec", err)
 	}
 
+	as := auth.NewAuth(os.Getenv("JWT_SECRET"))
+	api.BearerAuth = as.BearerAuth
+
 	db, err := database.NewDatastore(os.Getenv("DATABASE_URL"))
 	if err != nil {
 		log.Panicln("database.NewDatastore", err)
@@ -35,6 +39,7 @@ func startServer(cmd *cobra.Command, args []string) {
 
 	svc := service.NewService(
 		BuildDate, CommitHash,
+		service.WithAuth(as),
 		service.WithDatabase(db),
 		)
 

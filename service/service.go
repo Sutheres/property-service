@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/Sutheres/property-service/internal/auth"
 	"github.com/Sutheres/property-service/internal/models"
 	"github.com/Sutheres/property-service/internal/datastore/database"
 )
@@ -10,6 +11,7 @@ type service struct {
 	commitHash string
 	//
 	db database.Database
+	as auth.Auth
 }
 
 
@@ -32,6 +34,12 @@ func NewService(buildDate, commitHash string, opts ...option) Service {
 		opt(service)
 	}
 	return service
+}
+
+func WithAuth(as auth.Auth) option {
+	return func(s *service) {
+		s.as = as
+	}
 }
 
 func WithDatabase(db database.Database) option  {
